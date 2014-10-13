@@ -15,6 +15,10 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var mensConvertedShoeSizeLabel: UILabel!
     
+    @IBOutlet weak var womenShoeSizeTextField: UITextField!
+    
+    @IBOutlet weak var womenConvertedShoeSizeLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -37,7 +41,18 @@ class ViewController: UIViewController {
         mensConvertedShoeSizeLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European Format"
     
     }
+    
+    
 
+    @IBAction func womenConversionPressed(sender: UIButton) {
+        
+        let sizeFromTextField = Double((womenShoeSizeTextField.text as NSString).doubleValue)
+        
+        let conversionConstant = 30.5
+        womenConvertedShoeSizeLabel.hidden = false
+        
+        womenConvertedShoeSizeLabel.text = "\(sizeFromTextField + conversionConstant)" + " in European Format"
+    }
 
 }
 
